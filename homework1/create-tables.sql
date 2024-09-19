@@ -1,82 +1,85 @@
-CREATE TABLE crew (
-    person_id INT PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    role_in_crew VARCHAR(50)
+create table crew (
+    personal_id int not null auto_increment,
+    first_name varchar(50),
+    last_name varchar(50),
+    role_in_crew varchar(50),
+    primary key (personal_id)
 );
 
-INSERT INTO crew (person_id, first_name, last_name, role_in_crew)
-VALUES
-(1, 'Ivan', 'Kozhedub', 'capitan'),
-(2, 'Ethan', 'Harper', 'first officer'),
-(3, 'Oliver', 'Bennett', 'navigator'),
-(4, 'Emma', 'Caldwell', 'flight attendant'),
-(5, 'lily', 'Thompson', 'flight attendant'),
-(6, 'Jack', 'Preston', 'flight attendant'),
-(7, 'Sophie', 'Brooks', 'capitan'),
-(8, 'Henry', 'Mitchell', 'first officer'),
-(9, 'Grace', 'Donivan', 'navigator'),
-(10, 'James', 'Fletcher', 'flight attendant'),
-(11, 'Ava', 'Collins', 'flight attendant'),
-(12, 'Harry', 'Potter', 'flight attendant');
+insert into crew (first_name, last_name, role_in_crew)
+values
+('Ivan', 'Kozhedub', 'capitan'),
+('Ethan', 'Harper', 'first officer'),
+('Oliver', 'Bennett', 'navigator'),
+('Emma', 'Caldwell', 'flight attendant'),
+('lily', 'Thompson', 'flight attendant'),
+( 'Jack', 'Preston', 'flight attendant'),
+('Sophie', 'Brooks', 'capitan'),
+('Henry', 'Mitchell', 'first officer'),
+('Grace', 'Donivan', 'navigator'),
+('James', 'Fletcher', 'flight attendant'),
+('Ava', 'Collins', 'flight attendant'),
+('Harry', 'Potter', 'flight attendant');
 
-CREATE TABLE passengers (
-    passenger_id INT PRIMARY KEY,
-    first_name VARCHAR(50),
-    last_name VARCHAR(50),
-    age INT
+create table passengers (
+    passenger_id int not null auto_increment,
+    first_name varchar(50),
+    last_name varchar(50),
+    age int,
+    primary key (passenger_id)
 );
 
-INSERT INTO passengers (passenger_id, first_name, last_name, age)
-VALUES
-(1, 'Abe', 'Simpson', 98),
-(2, 'Moe', 'Szyslak', 44),
-(3, 'Ned', 'Flanders', 5),
-(4, 'Homer', 'Simpson', 35),
-(5, 'Marge', 'Simpson', 34),
-(6, 'Bart', 'Simpson', 12),
-(7, 'Lisa', 'Simpson', 10),
-(8, 'Maggie', 'Simpson', 2),
-(9, 'Milhouse', 'Van Houten', 30),
-(10, 'MR.', 'Burns', 24),
-(11, 'Krusty', 'Clown', 25),
-(12, 'Chief', 'Wiggum', 42),
-(13, 'luffy', 'Monkey', 20),
-(14, 'Buggy', 'Clown', 41),
-(15, 'Carl', 'Carlson', 21),
-(16, 'Lenny', 'Leonard', 34),
-(17, 'Law', 'Trafalgar', 35),
-(18, 'Apu', 'Nahasapeemapetilon', 36),
-(19, 'Seymour', 'Skinner', 41),
-(20, 'Enda', 'Krabappel', 29),
-(21, 'Barney', 'Gumble', 20),
-(22, 'Mattew', 'Macfadien', 24),
-(23, 'Tom', 'Holland', 25),
-(24, 'Alice', 'Cooper', 27);
+insert into passengers (first_name, last_name, age)
+values
+('Abe', 'Simpson', 98),
+('Moe', 'Szyslak', 44),
+('Ned', 'Flanders', 5),
+('Homer', 'Simpson', 35),
+('Marge', 'Simpson', 34),
+('Bart', 'Simpson', 12),
+('Lisa', 'Simpson', 10),
+('Maggie', 'Simpson', 2),
+('Milhouse', 'Van Houten', 30),
+('MR.', 'Burns', 24),
+('Krusty', 'Clown', 25),
+('Chief', 'Wiggum', 42),
+('luffy', 'Monkey', 20),
+('Buggy', 'Clown', 41),
+('Carl', 'Carlson', 21),
+('Lenny', 'Leonard', 34),
+('Law', 'Trafalgar', 35),
+('Apu', 'Nahasapeemapetilon', 36),
+('Seymour', 'Skinner', 41),
+('Enda', 'Krabappel', 29),
+('Barney', 'Gumble', 20),
+('Mattew', 'Macfadien', 24),
+('Tom', 'Holland', 25),
+('Alice', 'Cooper', 27);
 
-CREATE TABLE aircrafts (
-    aircraft_id INT PRIMARY KEY,
-    model VARCHAR(50),
-    year_of_make DATE
+create table aircrafts (
+    aircraft_id int not null auto_increment,
+    model varchar(50),
+    year_of_make date, 
+    primary key (aircraft_id)
 );
 
-INSERT INTO aircrafts (aircraft_id, model, year_of_make)
-VALUES
-(1, 'Boing 737', '2019-11-12'),
-(2, 'AirBus A320', '2018-5-23'),
-(3, 'Boing 737', '2019-2-9'),
-(4, 'AirBus A320', '2018-1-30'),
-(5, 'Boing 737', '2019-12-10');
+insert into aircrafts (model, year_of_make)
+values
+('Boing 737', '2019-11-12'),
+('AirBus A320', '2018-5-23'),
+('Boing 737', '2019-2-9'),
+('AirBus A320', '2018-1-30'),
+('Boing 737', '2019-12-10');
 
-CREATE TABLE aircraft_maintencence (
-	aircraft_id INT,
-	routine_maintencence DATE, -- once in 1-2 year
-	line_maintencence DATE, -- after each flight
-	FOREIGN KEY (aircraft_id) REFERENCES aircrafts(aircraft_id)
+create table aircraft_maintenance (
+	aircraft_id int,
+	routine_maintenance date, -- once in 1-2 year
+	line_maintenance date, -- after each flight
+	foreign key (aircraft_id) references aircrafts(aircraft_id)
 );
 
-INSERT INTO aircraft_maintencence (aircraft_id, routine_maintencence, line_maintencence)
-VALUES
+insert into aircraft_maintenance (aircraft_id, routine_maintenance, line_maintenance)
+values
 (1, '2021-01-12', '2021-01-19'), 
 (1, null, '2021-05-29'),
 (1, null, '2022-11-02'),
@@ -103,47 +106,127 @@ VALUES
 (5, '2023-11-12', '2024-01-12'),
 (5, null, '2024-10-02');
 
-CREATE TABLE flights (
-	flight_id INT,
-	aircraft_id INT,
-	person_id INT,
-    passenger_id INT,
-    date_of_flight DATE,
-    airport_from VARCHAR(50),
-    airport_to VARCHAR(50),
-	FOREIGN KEY (aircraft_id) REFERENCES aircrafts(aircraft_id),
-    FOREIGN KEY (person_id) REFERENCES crew(person_id),
-	FOREIGN KEY (passenger_id) REFERENCES passengers(passenger_id)
+create table flights (
+flight_id int not null auto_increment,
+aircraft_id int,
+airport_from varchar(50),
+airport_to varchar(50),
+date_of_flight date,
+foreign key (aircraft_id) references aircrafts(aircraft_id),
+primary key (flight_id)
 );
 
-INSERT INTO flights (flight_id, aircraft_id, person_id, passenger_id, date_of_flight, airport_from, airport_to)
-VALUES
-(1, 1, 1, 1, '2024-11-21', 'LHR', 'VIE'), -- from Heathrow Airport (London) to Viena international Airport (Austria)
-(1, 1, 2, 2, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, 3, 3, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, 4, 4, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, 5, 5, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, 6, 6, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, null, 7, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, null, 8, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, null, 9, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, null, 10, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, null, 11, '2024-11-21', 'LHR', 'VIE'),
-(1, 1, null, 12, '2024-11-21', 'LHR', 'VIE'),
-(2, 4, 7, 13, '2024-11-27', 'VIE', 'LHR'), -- from Viena international Airport (Austria) to Heathrow Airport (London)
-(2, 4, 8, 14, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, 9, 15, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, 10, 16, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, 11, 17, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, 12, 18, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, null, 19, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, null, 20, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, null, 21, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, null, 22, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, null, 23, '2024-11-27', 'VIE', 'LHR'),
-(2, 4, null, 24, '2024-11-27', 'VIE', 'LHR');
+insert into flights (aircraft_id, date_of_flight, airport_from, airport_to)
+values
+(1, '2024-11-21', 'LHR', 'VIE'), -- from Heathrow Airport (London) to Viena international Airport (Austria)
+(4, '2024-11-27', 'VIE', 'LHR'); -- from Viena international Airport (Austria) to Heathrow Airport (London)
+
+create table flight_passengers (
+	flight_id int,
+	personal_id int,
+    passenger_id int,
+    foreign key (flight_id) references flights(flight_id),
+    foreign key (personal_id) references crew(personal_id),
+	foreign key (passenger_id) references passengers(passenger_id)
+);
+
+insert into flight_passengers (flight_id, personal_id, passenger_id)
+values
+(1, 1, 1),
+(1, 2, 2),
+(1, 3, 3),
+(1, 4, 4),
+(1, 5, 5),
+(1, 6, 6),
+(1, null, 7),
+(1, null, 8),
+(1, null, 9),
+(1, null, 10),
+(1, null, 11),
+(1, null, 12),
+(2, 7, 13),
+(2, 8, 14),
+(2, 9, 15),
+(2, 10, 16),
+(2, 11, 17),
+(2, 12, 18),
+(2, null, 19),
+(2, null, 20),
+(2, null, 21),
+(2, null, 22),
+(2, null, 23),
+(2, null, 24);
+
+create table flight_incedents (
+	incedents_id int not null auto_increment,
+	flight_id int,
+	incident_date date,
+    foreign key (flight_id) references flights(flight_id),
+    primary key (incedents_id) 
+);
+
+insert into flight_incedents (flight_id, incident_date)
+values
+(2, '2024-11-27');
+
+create table incident_passengers (
+	incedents_id int,
+	passenger_id int,
+	personal_id int,
+	foreign key (incedents_id) references flight_incedents(incedents_id),
+	foreign key (passenger_id) references passengers(passenger_id),
+	foreign key (personal_id) references crew(personal_id)
+);
+
+insert into incident_passengers (incedents_id, passenger_id, personal_id)
+values
+(1, 13, 7),
+(1, 14, 8),
+(1, 15, 9),
+(1, 16, 10),
+(1, 17, 11),
+(1, 18, 12),
+(1, 19, null),
+(1, 20, null),
+(1, 21, null),
+(1, 22, null),
+(1, 23, null),
+(1, 24, null);
+
+create table passenger_compensation (
+	incedents_id int,
+	passenger_id int,
+	amount_dollar decimal,
+	date_of_payment date,
+	foreign key (incedents_id) references flight_incedents(incedents_id),
+	foreign key (passenger_id) references passengers(passenger_id)
+);
+	
+insert into passenger_compensation (incedents_id, passenger_id, amount_dollar, date_of_payment)
+values
+(1, 13, 1000, '2024-11-27)'),
+(1, 14, 1000, '2024-11-27)'),
+(1, 15, 1100, '2024-11-27)'),
+(1, 16, 1100, '2024-11-27)'),
+(1, 17, 800, null),
+(1, 18, 900, null),
+(1, 19, 1300, null),
+(1, 20, 950, '2024-11-27)'),
+(1, 21, 1050, '2024-11-27)'),
+(1, 22, 1000, null),
+(1, 23, 1010, null),
+(1, 24, 1120, null);
 
 -- joining 
 
-
-
+select passengers.first_name, passengers.last_name, passenger_compensation.amount_dollar, 
+		flights.airport_from, flights.airport_to, crew.first_name, crew.last_name,
+		crew.role_in_crew, passenger_compensation.date_of_payment
+from flight_incedents 
+right join incident_passengers on flight_incedents.incedents_id = incident_passengers.incedents_id
+left join passengers on incident_passengers.passenger_id = passengers.passenger_id
+left join passenger_compensation on passengers.passenger_id = passenger_compensation.passenger_id
+left join crew on incident_passengers.personal_id = crew.personal_id 
+left join flights on flight_incedents.flight_id = flights.flight_id
+where passenger_compensation.date_of_payment is null -- we will see all people who didn`t get their compensation
+order by amount_dollar;
