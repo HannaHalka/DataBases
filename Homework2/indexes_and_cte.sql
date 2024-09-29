@@ -55,7 +55,7 @@ cte_orders as (
     where order_date >= '2024-01-01'
 )
 select cte_clients.name, cte_clients.surname, cte_orders.order_date,
-    opt_products.product_category, opt_products.product_name
+       opt_products.product_category, opt_products.product_name
 from cte_orders
 right join cte_clients on cte_orders.client_id = cte_clients.id
 right join opt_products on cte_orders.product_id = opt_products.product_id;
