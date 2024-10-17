@@ -35,7 +35,7 @@ create table crew_members(
 crew_member_id int primary key,
 first_name varchar(50),
 lastname varchar(50),
-role enum('Pilot', 'Co-Pilot', 'Navigator', 'Flight Attendant') not null,
+'role' enum('Pilot', 'Co-Pilot', 'Navigator', 'Flight Attendant') not null,
 license_number varchar(90) comment 'pilot license',
 email varchar(50),
 phone varchar(20),
