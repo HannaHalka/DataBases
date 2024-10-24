@@ -1,0 +1,11 @@
+aircraft_id,aircraft_model,capacity,manufacturer,in_service_date
+AC001,Boeing 737-800,160,Boeing,2010-05-15
+AC002,Airbus A320,150,Airbus,2012-08-20
+AC003,Boeing 777-300ER,365,Boeing,2015-03-10
+AC004,Airbus A330-300,300,Airbus,2014-11-25
+AC005,Embraer E190,100,Embraer,2016-06-05
+AC006,Boeing 787-9,280,Boeing,2018-09-17
+AC007,Airbus A350-900,325,Airbus,2017-12-01
+AC008,Bombardier CRJ900,90,Bombardier,2013-02-28
+AC009,Boeing 767-300,210,Boeing,2009-07-22
+AC010,Airbus A380-800,525,Airbus,2011-10-12

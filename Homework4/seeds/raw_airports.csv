@@ -1,0 +1,16 @@
+airport_code,airport_name,city,country,timezone
+JFK,John F. Kennedy International Airport,New York,USA,America/New_York
+LAX,Los Angeles International Airport,Los Angeles,USA,America/Los_Angeles
+ORD,O'Hare International Airport,Chicago,USA,America/Chicago
+MIA,Miami International Airport,Miami,USA,America/New_York
+SFO,San Francisco International Airport,San Francisco,USA,America/Los_Angeles
+LHR,London Heathrow Airport,London,United Kingdom,Europe/London
+ATL,Hartsfield–Jackson Atlanta International Airport,Atlanta,USA,America/New_York
+DFW,Dallas/Fort Worth International Airport,Dallas,USA,America/Chicago
+DEN,Denver International Airport,Denver,USA,America/Denver
+SEA,Seattle–Tacoma International Airport,Seattle,USA,America/Los_Angeles
+BOS,Logan International Airport,Boston,USA,America/New_York
+LAS,McCarran International Airport,Las Vegas,USA,America/Los_Angeles
+PHX,Phoenix Sky Harbor International Airport,Phoenix,USA,America/Phoenix
+IAH,George Bush Intercontinental Airport,Houston,USA,America/Chicago
+MCO,Orlando International Airport,Orlando,USA,America/New_York

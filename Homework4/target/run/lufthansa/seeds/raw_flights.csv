@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "lh"."main"."raw_flights" ("flight_id" integer,"flight_number" text,"origin_airport_code" text,"destination_airport_code" text,"scheduled_departure_time" timestamp without time zone,"scheduled_arrival_time" timestamp without time zone,"actual_departure_time" timestamp without time zone,"actual_arrival_time" timestamp without time zone,"aircraft_id" text,"status" text)
+  ;
+    -- dbt seed --
+    
+          COPY "lh"."main"."raw_flights" FROM 'C:\Coding\DataBases\DbtWork\lufthansa\lufthansa\seeds\raw_flights.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

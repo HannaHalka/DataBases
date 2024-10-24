@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "lh"."main"."raw_aircrafts" ("aircraft_id" text,"aircraft_model" text,"capacity" integer,"manufacturer" text,"in_service_date" date)
+  ;
+    -- dbt seed --
+    
+          COPY "lh"."main"."raw_aircrafts" FROM 'C:\Coding\DataBases\DbtWork\lufthansa\lufthansa\seeds\raw_aircrafts.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

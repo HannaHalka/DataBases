@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "lh"."main"."raw_airports" ("airport_code" text,"airport_name" text,"city" text,"country" text,"timezone" text)
+  ;
+    -- dbt seed --
+    
+          COPY "lh"."main"."raw_airports" FROM 'C:\Coding\DataBases\DbtWork\lufthansa\lufthansa\seeds\raw_airports.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

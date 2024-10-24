@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "lh"."main"."raw_passengers" ("passenger_id" integer,"first_name" text,"last_name" text,"date_of_birth" date,"email" text,"phone_number" text)
+  ;
+    -- dbt seed --
+    
+          COPY "lh"."main"."raw_passengers" FROM 'C:\Coding\DataBases\DbtWork\lufthansa\lufthansa\seeds\raw_passengers.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  

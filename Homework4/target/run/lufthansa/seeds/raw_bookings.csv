@@ -1,0 +1,13 @@
+
+    
+    
+    
+    create table "lh"."main"."raw_bookings" ("booking_id" integer,"flight_id" integer,"passenger_id" integer,"booking_date" date,"booking_status" text,"price" integer)
+  ;
+    -- dbt seed --
+    
+          COPY "lh"."main"."raw_bookings" FROM 'C:\Coding\DataBases\DbtWork\lufthansa\lufthansa\seeds\raw_bookings.csv' (FORMAT CSV, HEADER TRUE, DELIMITER ',')
+        
+
+;
+  
